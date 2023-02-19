@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hassamboi/web-portfolio.git"
+    "url": "git+https://github.com/hassamboi/portfolio.git"
   },
   "keywords": [
     "portfolio",
@@ -20,9 +20,9 @@
   "author": "Hassam Ud Din",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/hassamboi/web-portfolio/issues"
+    "url": "https://github.com/hassamboi/portfolio/issues"
   },
-  "homepage": "https://github.com/hassamboi/web-portfolio#readme",
+  "homepage": "https://github.com/hassamboi/portfolio#readme",
   "devDependencies": {
     "nodemon": "^2.0.20"
   },
