@@ -72,9 +72,7 @@ export default function Signup() {
               onChange={onChange}
               required
             />
-            <button type="submit" className="btn">
-              Submit
-            </button>
+            <input type="submit" className="form-btn" />
           </form>
         </div>
       </section>
