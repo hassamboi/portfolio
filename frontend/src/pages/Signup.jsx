@@ -42,7 +42,11 @@ export default function Signup() {
   }, [user, isError, isSuccess, message, navigate, dispatch])
 
   if (isLoading) {
-    return <p>Loading</p>
+    return (
+      <main className="main-wrapper">
+        <h1>Loading</h1>
+      </main>
+    )
   }
 
   return (

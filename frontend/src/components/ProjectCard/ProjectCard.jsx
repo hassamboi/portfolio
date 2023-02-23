@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function ProjectItem({ project }) {
+export default function ProjectCard({ project }) {
   return (
     <div>
       <h3>{project.title}</h3>
