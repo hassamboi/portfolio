@@ -30,7 +30,21 @@ const getBlogs = asyncHandler(async (req, res) => {
   res.status(200).json(blogs)
 })
 
+// @desc    Get single blog
+// @route   GET /api/blogs/:id
+// @access  Public
+const getBlog = asyncHandler(async (req, res) => {
+  if (!req.params.id || !req.params.id.match(/^[0-9a-fA-F]{24}$/)) {
+    res.status(400)
+    throw new Error('Blog id not valid')
+  }
+
+  const blog = await Blog.find({ id: req.params.id })
+  res.status(200).json(blog)
+})
+
 module.exports = {
   createBlog,
   getBlogs,
+  getBlog,
 }

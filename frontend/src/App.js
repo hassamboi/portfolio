@@ -10,6 +10,7 @@ import Signin from './pages/Signin'
 import NotFound from './pages/NotFound'
 import Projects from './pages/Projects'
 import Blogs from './pages/Blogs'
+import BlogContent from './pages/BlogContent'
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/signin" element={<Signin />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/blogs" element={<Blogs />} />
+          <Route path="/blogs/:id" element={<BlogContent />} />
           <Route path="/404" element={<NotFound />} />
           <Route path="*" element={<Navigate to="/404" replace />} />
         </Routes>

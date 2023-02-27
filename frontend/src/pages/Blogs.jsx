@@ -18,7 +18,7 @@ export default function Blogs() {
     return () => {
       dispatch(reset())
     }
-  }, [isError, message, dispatch])
+  }, [])
 
   if (isLoading) {
     return (
