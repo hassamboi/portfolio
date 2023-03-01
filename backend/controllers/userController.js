@@ -31,7 +31,9 @@ const registerUser = asyncHandler(async (req, res) => {
 
   // respond with user data
   if (user) {
-    res.status(201).json({ _id: user.id, name: user.name, email: user.email, token: generateToken(user._id) })
+    res
+      .status(201)
+      .json({ _id: user.id, name: user.name, email: user.email, readBlogs: user.readBlogs, token: generateToken(user._id) })
   } else {
     res.status(400)
     throw new Error('Invalid user data')
@@ -53,7 +55,9 @@ const loginUser = asyncHandler(async (req, res) => {
   const user = await User.findOne({ email })
 
   if (user && (await bcrypt.compare(password, user.password))) {
-    res.status(200).json({ _id: user.id, name: user.name, email: user.email, token: generateToken(user._id) })
+    res
+      .status(200)
+      .json({ _id: user.id, name: user.name, email: user.email, readBlogs: user.readBlogs, token: generateToken(user._id) })
   } else {
     res.status(400)
     throw new Error('Invalid credentials')
@@ -67,6 +71,26 @@ const getMe = asyncHandler(async (req, res) => {
   res.status(200).json(req.user)
 })
 
+// @desc    Add blog to user's read blogs
+// @route   POST /api/users/blogs/:id
+// @access  Private
+const readBlog = asyncHandler(async (req, res) => {
+  if (!req.params.id || !req.params.id.match(/^[0-9a-fA-F]{24}$/)) {
+    res.status(400)
+    throw new Error('Blog id not valid')
+  }
+
+  const user = await User.findByIdAndUpdate(req.user.id, { $addToSet: { readBlogs: req.params.id } }, { new: true })
+
+  // respond with user data
+  if (user) {
+    res.status(201).json(user.readBlogs)
+  } else {
+    res.status(400)
+    throw new Error('Invalid user data')
+  }
+})
+
 // helper ftn to generate JWT
 const generateToken = id => {
   return jwt.sign({ id }, process.env.JWT_SECRET, {
@@ -78,4 +102,5 @@ module.exports = {
   registerUser,
   loginUser,
   getMe,
+  readBlog,
 }

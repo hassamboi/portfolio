@@ -1,4 +1,5 @@
 const mongoose = require('mongoose')
+const blogModel = require('./blogModel')
 
 const userSchema = mongoose.Schema(
   {
@@ -15,6 +16,7 @@ const userSchema = mongoose.Schema(
       type: String,
       required: [true, 'Please add a password'],
     },
+    readBlogs: [{ type: mongoose.Schema.Types.ObjectId, ref: blogModel }],
   },
   { timestamps: true }
 )

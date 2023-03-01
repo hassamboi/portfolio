@@ -24,6 +24,17 @@ const login = async userData => {
   return response.data
 }
 
+// mark a blog as read for a user
+const markBlogAsRead = async (blogId, token) => {
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  }
+  const response = await axios.post(API_URL + `blogs/${blogId}`, null, config)
+  return response.data
+}
+
 // logout user
 const logout = () => {
   localStorage.removeItem('user')
@@ -33,6 +44,7 @@ const authService = {
   register,
   login,
   logout,
+  markBlogAsRead,
 }
 
 export default authService
