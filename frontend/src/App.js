@@ -5,7 +5,7 @@ import 'react-toastify/dist/ReactToastify.css'
 
 import Signup from './pages/Signup'
 import Home from './pages/Home'
-import Header from './components/Header/Header'
+import Navbar from './components/Navbar/Navbar'
 import Signin from './pages/Signin'
 import NotFound from './pages/NotFound'
 import Projects from './pages/Projects'
@@ -16,7 +16,7 @@ function App() {
   return (
     <Fragment>
       <BrowserRouter>
-        <Header />
+        <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/signup" element={<Signup />} />
