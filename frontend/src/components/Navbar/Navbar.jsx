@@ -17,11 +17,15 @@ const Navbar = () => {
     navigate('/')
   }
 
+  const navigateToHome = () => {
+    navigate('/')
+  }
+
   return (
     <header>
       <nav className="main-navbar">
         <div className="main-navbar-avatar">
-          <Avatar image={Image} width="40" height="40" />
+          <Avatar src={Image} width="40" height="40" handleClick={navigateToHome} />
         </div>
         <h3 className="main-navbar-title">
           <Link to="/">Hassam's Devlog</Link>

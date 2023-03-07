@@ -9,7 +9,7 @@ export default function ProjectCard({ project }) {
       <div className="project-card">
         <div className="project-card-top">
           <div className="avatar">
-            <Avatar image={Image} width="50" height="50" />
+            <Avatar src={Image} width="50" height="50" />
           </div>
         </div>
         <h4 className="project-card-title">{project.title}</h4>

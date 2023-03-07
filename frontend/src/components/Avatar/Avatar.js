@@ -1,19 +1,21 @@
 import React from 'react'
 
-const Avatar = ({ image, width, height }) => {
+const Avatar = ({ src, width, height, handleClick }) => {
   const avatarStyle = {
     width: `${width}px`,
     height: `${height}px`,
     borderRadius: '50%',
     overflow: 'hidden',
-    objectFit: 'cover',
+    cursor: handleClick ? 'pointer' : 'default', // set cursor to pointer if handleClick is passed
   }
 
-  return (
-    <div style={avatarStyle}>
-      <img src={image} alt="avatar" style={{ width: '100%', height: '100%' }} />
-    </div>
-  )
+  const handleAvatarClick = () => {
+    if (handleClick) {
+      handleClick()
+    }
+  }
+
+  return <img src={src} style={avatarStyle} alt="Avatar" onClick={handleAvatarClick} />
 }
 
 export default Avatar
