@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { logout, reset } from '../../features/auth/authSlice'
@@ -29,9 +29,15 @@ const Navbar = () => {
         <div className="main-navbar-buttons">
           <Link to="/projects">Projects</Link>
           <Link to="/blogs">Blogs</Link>
-          <Link to="/signin" className="btn">
-            Sign in
-          </Link>
+          {user ? (
+            <span className="btn" onClick={onLogout}>
+              Log out
+            </span>
+          ) : (
+            <Link to="/signin" className="btn">
+              Sign in
+            </Link>
+          )}
         </div>
       </nav>
     </header>
