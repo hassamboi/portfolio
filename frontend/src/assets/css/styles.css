@@ -59,14 +59,17 @@ h3 {
 
 h1 {
   font-size: 48px !important;
+  line-height: 52px !important;
 }
 
 h2 {
   font-size: 32px !important;
+  line-height: 32px !important;
 }
 
 h3 {
   font-size: 24px !important;
+  line-height: 28px !important;
 }
 
 h4 {
@@ -81,6 +84,21 @@ a {
 
 .text-mono {
   font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace !important;
+}
+
+.section-title {
+  margin: 30px 0;
+}
+
+.colored {
+  margin-bottom: 12px;
+  font-size: 16px !important;
+  line-height: 24px !important;
+  font-weight: bold;
+  background: -webkit-linear-gradient(-70deg, #8250df 0%, #d42a32 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 @media screen and (min-width: 768px) {

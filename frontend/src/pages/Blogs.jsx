@@ -31,7 +31,7 @@ export default function Blogs() {
   return (
     <main className="main-wrapper">
       <section id="blogs">
-        <h1>Blogs</h1>
+        <h1 className="section-title">Blogs</h1>
         {blogs.length > 0 ? (
           <div>
             {blogs.map(blog => (

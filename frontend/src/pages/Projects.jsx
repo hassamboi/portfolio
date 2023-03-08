@@ -31,7 +31,7 @@ export default function Projects() {
   return (
     <main className="main-wrapper">
       <section id="projects">
-        <h1>Projects</h1>
+        <h1 className="section-title">Projects</h1>
         <ProjectList projects={projects} />
       </section>
     </main>

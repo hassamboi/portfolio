@@ -5,6 +5,9 @@ import './bloglist.css'
 
 export default function BlogCard({ blog }) {
   const navigate = useNavigate()
+  const date = new Date()
+  const options = { year: 'numeric', month: 'short', day: 'numeric' }
+  const formattedDate = date.toLocaleDateString('en-US', options)
 
   const handleClick = id => {
     navigate(`/blogs/${id}`)
@@ -13,7 +16,7 @@ export default function BlogCard({ blog }) {
   return (
     <div onClick={() => handleClick(blog.title.replace(/\s+/g, '-').toLowerCase() + `-${blog._id}`)} className="blog-card">
       <div className="blog-card-image">
-        <img src={Image} />
+        <img src={Image} alt="blog banner" />
       </div>
       <div className="blog-card-content">
         <h4 className="blog-card-title">{blog.title}</h4>
@@ -23,6 +26,7 @@ export default function BlogCard({ blog }) {
         </p>
         <div className="blog-card-meta">
           <small>HASSAM</small>
+          <small>{formattedDate}</small>
         </div>
       </div>
       {/* <div>

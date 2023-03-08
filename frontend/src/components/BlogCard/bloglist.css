@@ -37,9 +37,13 @@
 }
 
 .blog-card-description {
-  font-weight: 400;
+  margin-bottom: 5px;
 }
 
 .blog-card-meta {
   letter-spacing: 0.5px;
+}
+
+.blog-card-meta small {
+  margin-right: 10px;
 }

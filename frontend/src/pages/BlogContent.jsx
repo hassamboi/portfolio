@@ -3,6 +3,7 @@ import { getBlog, reset } from '../features/blogs/blogsSlice'
 import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import { markBlogAsRead } from '../features/auth/authSlice'
+import Blog from '../components/Blog/Blog'
 
 export default function BlogContent() {
   // get the event id from params
@@ -44,15 +45,7 @@ export default function BlogContent() {
         {blogs.length > 0 ? (
           <div>
             {blogs.map(blog => (
-              <div key={blog._id}>
-                <h1>{blog.title}</h1>
-                {blog.sections.map(section => (
-                  <div key={section._id}>
-                    <h2>{section.name}</h2>
-                    <p>{section.content}</p>
-                  </div>
-                ))}
-              </div>
+              <Blog blog={blog} key={blog._id} />
             ))}
             {user && !user.readBlogs.includes(id) && <button onClick={handleClick}>Mark Blog as Read</button>}
           </div>
