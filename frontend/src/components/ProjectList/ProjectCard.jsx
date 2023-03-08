@@ -1,5 +1,4 @@
 import React from 'react'
-import './projectcard.css'
 import Image from '../../assets/images/dummy_project_avatar.jpg'
 import Avatar from './../Avatar/Avatar'
 

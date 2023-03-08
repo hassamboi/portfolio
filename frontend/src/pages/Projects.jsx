@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import ProjectCard from '../components/ProjectCard/ProjectCard'
+import ProjectList from '../components/ProjectList/ProjectList'
 import { getProjects, reset } from './../features/projects/projectsSlice'
 
 export default function Projects() {
@@ -32,15 +32,7 @@ export default function Projects() {
     <main className="main-wrapper">
       <section id="projects">
         <h1>Projects</h1>
-        {projects.length > 0 ? (
-          <div>
-            {projects.map(project => (
-              <ProjectCard key={project._id} project={project} />
-            ))}
-          </div>
-        ) : (
-          <p>No projects to display</p>
-        )}
+        <ProjectList projects={projects} />
       </section>
     </main>
   )
