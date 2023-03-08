@@ -11,6 +11,10 @@ const blogSchema = mongoose.Schema(
       type: String,
       required: [true, 'Please add a title'],
     },
+    description: {
+      type: String,
+      required: [true, 'Please add a decsription'],
+    },
     sections: [sectionSchema],
   },
   { timestamps: true }
