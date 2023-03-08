@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import ProjectList from '../components/ProjectList/ProjectList'
+import Spinner from '../components/Spinner/Spinner'
 import { getProjects, reset } from './../features/projects/projectsSlice'
 
 export default function Projects() {
@@ -18,14 +19,10 @@ export default function Projects() {
     return () => {
       dispatch(reset())
     }
-  }, [isError, message, dispatch])
+  }, [])
 
   if (isLoading) {
-    return (
-      <main className="main-wrapper">
-        <h1>Loading</h1>
-      </main>
-    )
+    return <Spinner />
   }
 
   return (

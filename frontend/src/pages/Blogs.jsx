@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { getBlogs, reset } from '../features/blogs/blogsSlice'
 import { useDispatch, useSelector } from 'react-redux'
 import BlogCard from '../components/BlogCard/BlogCard'
+import Spinner from '../components/Spinner/Spinner'
 
 export default function Blogs() {
   const dispatch = useDispatch()
@@ -21,11 +22,7 @@ export default function Blogs() {
   }, [])
 
   if (isLoading) {
-    return (
-      <main className="main-wrapper">
-        <h1>Loading</h1>
-      </main>
-    )
+    return <Spinner />
   }
 
   return (

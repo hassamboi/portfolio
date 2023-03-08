@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import { markBlogAsRead } from '../features/auth/authSlice'
 import Blog from '../components/Blog/Blog'
+import Spinner from '../components/Spinner/Spinner'
 
 export default function BlogContent() {
   // get the event id from params
@@ -32,11 +33,7 @@ export default function BlogContent() {
   }, [])
 
   if (isLoading) {
-    return (
-      <main className="main-wrapper">
-        <h1>Loading</h1>
-      </main>
-    )
+    return <Spinner />
   }
 
   return (

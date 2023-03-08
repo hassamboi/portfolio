@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
+import Spinner from '../components/Spinner/Spinner'
 import { login, reset } from '../features/auth/authSlice'
 
 export default function Signin() {
@@ -37,11 +38,7 @@ export default function Signin() {
   }, [user, isError, isSuccess, message, navigate, dispatch])
 
   if (isLoading) {
-    return (
-      <main className="main-wrapper">
-        <h1>Loading</h1>
-      </main>
-    )
+    return <Spinner />
   }
 
   return (
