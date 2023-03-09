@@ -1,7 +1,6 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import Image from '../../assets/images/dummy_project_avatar.jpg'
-import './bloglist.css'
 
 export default function BlogCard({ blog }) {
   const navigate = useNavigate()
@@ -29,14 +28,6 @@ export default function BlogCard({ blog }) {
           <small>{formattedDate}</small>
         </div>
       </div>
-      {/* <div>
-        {blog.sections.map(section => (
-          <Fragment key={section._id}>
-            <h4>{section.name}</h4>
-            <p>{section.content}</p>
-          </Fragment>
-        ))}
-      </div> */}
     </div>
   )
 }
