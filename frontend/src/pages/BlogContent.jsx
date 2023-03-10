@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { getBlog, reset } from '../features/blogs/blogsSlice'
 import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
-import { markBlogAsRead } from '../features/auth/authSlice'
 import Blog from '../components/Blog/Blog'
 import Spinner from '../components/Spinner/Spinner'
 
@@ -13,12 +12,7 @@ export default function BlogContent() {
   const id = params[params.length - 1]
 
   const dispatch = useDispatch()
-  const { blogs, isLoading, isError, message } = useSelector(state => state.blogs)
-  const { user } = useSelector(state => state.auth)
-
-  const handleClick = () => {
-    dispatch(markBlogAsRead(id))
-  }
+  const { blogs, isLoading, isError } = useSelector(state => state.blogs)
 
   useEffect(() => {
     if (isError) return
@@ -44,7 +38,6 @@ export default function BlogContent() {
             {blogs.map(blog => (
               <Blog blog={blog} key={blog._id} />
             ))}
-            {user && !user.readBlogs.includes(id) && <button onClick={handleClick}>Mark Blog as Read</button>}
           </div>
         ) : (
           <h1>No blog content to display</h1>

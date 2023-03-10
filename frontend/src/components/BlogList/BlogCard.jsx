@@ -1,6 +1,6 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
-import Image from '../../assets/images/dummy_project_avatar.jpg'
+import Image from '../../assets/images/dummy_blog_banner.jpg'
 
 export default function BlogCard({ blog }) {
   const navigate = useNavigate()
@@ -19,12 +19,9 @@ export default function BlogCard({ blog }) {
       </div>
       <div className="blog-card-content">
         <h4 className="blog-card-title">{blog.title}</h4>
-        <p className="blog-card-description">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, doloribus laboriosam numquam eius ratione nostrum nam
-          iure perferendis illo at soluta! Facere ex deleniti, aperiam exercitationem esse ipsam mollitia repellendus?
-        </p>
+        <p className="blog-card-description">{blog.description}</p>
         <div className="blog-card-meta">
-          <small>HASSAM</small>
+          <small>{blog.author.toUpperCase()}</small>
           <small>{formattedDate}</small>
         </div>
       </div>

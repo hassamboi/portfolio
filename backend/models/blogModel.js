@@ -1,21 +1,21 @@
 const mongoose = require('mongoose')
 
-const sectionSchema = mongoose.Schema({
-  name: { type: String, required: [true, 'Please add section title'] },
-  content: { type: String, required: [true, 'Please add section content'] },
-})
-
 const blogSchema = mongoose.Schema(
   {
     title: {
       type: String,
       required: [true, 'Please add a title'],
     },
+    author: {
+      type: String,
+      required: [true, 'Please add the author'],
+    },
+    categories: { type: [String], required: true, default: [] },
     description: {
       type: String,
       required: [true, 'Please add a decsription'],
     },
-    sections: [sectionSchema],
+    content: { type: String, required: [true, 'Please add the content'] },
   },
   { timestamps: true }
 )

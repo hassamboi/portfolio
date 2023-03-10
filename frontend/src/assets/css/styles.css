@@ -27,6 +27,7 @@ html {
   --text-secondary: #fff;
   --accent-gradient-start: #8250df;
   --accent-gradient-end: #d42a32;
+  --nav-height: 76.8px;
 }
 
 .btn {
@@ -98,6 +99,10 @@ a {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+section {
+  margin-top: calc(var(--nav-height) + 32px);
 }
 
 @media screen and (min-width: 768px) {

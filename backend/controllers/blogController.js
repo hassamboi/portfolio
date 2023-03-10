@@ -5,14 +5,14 @@ const Blog = require('../models/blogModel')
 // @route   POST /api/blogs
 // @access  Private
 const createBlog = asyncHandler(async (req, res) => {
-  const { title, sections } = req.body
+  const { title, description, author, content, categories } = req.body
 
-  if (!title || !sections) {
+  if (!title || !description || !author || !content || !categories) {
     res.status(400)
     throw new Error('Please add all fields')
   }
 
-  const blog = await Blog.create({ title, sections })
+  const blog = await Blog.create({ title, description, author, content, categories })
 
   if (blog) {
     res.status(201).json({ message: 'Blog successfully created' })

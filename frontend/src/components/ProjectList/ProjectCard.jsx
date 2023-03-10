@@ -1,5 +1,5 @@
 import React from 'react'
-import Image from '../../assets/images/dummy_project_avatar.jpg'
+import Image from '../../assets/images/dummy_project_avatar.png'
 import Avatar from './../Avatar/Avatar'
 
 export default function ProjectCard({ project }) {

@@ -2,7 +2,7 @@ import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { logout, reset } from '../../features/auth/authSlice'
-import Image from '../../assets/images/dummy_project_avatar.jpg'
+import Image from '../../assets/images/dummy_project_avatar.png'
 import './navbar.css'
 import Avatar from './../Avatar/Avatar'
 
