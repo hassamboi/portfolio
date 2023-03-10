@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import Spinner from '../components/Spinner/Spinner'
 import { register, reset } from '../features/auth/authSlice'
@@ -76,6 +76,9 @@ export default function Signup() {
             <input type="submit" className="form-btn" />
           </form>
         </div>
+        <p>
+          Already registered? Go to <Link to="/signin">Sign in</Link>
+        </p>
       </section>
     </main>
   )
