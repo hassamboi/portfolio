@@ -92,8 +92,8 @@ a {
 }
 
 .colored {
-  font-size: 16px !important;
-  line-height: 24px !important;
+  font-size: 16px;
+  line-height: 24px;
   font-weight: bold;
   background: -webkit-linear-gradient(-70deg, #8250df 0%, #d42a32 100%);
   background-clip: text;

@@ -1,5 +1,5 @@
 import React from 'react'
-import Image from '../../assets/images/dummy_project_avatar.png'
+import Image from '../../assets/images/e-commerce-website.png'
 import Avatar from './../Avatar/Avatar'
 
 export default function ProjectCard({ project }) {
@@ -14,8 +14,10 @@ export default function ProjectCard({ project }) {
         <h4 className="project-card-title">{project.title}</h4>
         <p className="project-card-description">{project.description}</p>
         <div className="project-card-technologies text-mono">
-          {project.technologies.map(technology => (
-            <small className="project-card-technology">{technology}</small>
+          {project.technologies.map((technology, index) => (
+            <small key={index} className="project-card-technology">
+              {technology}
+            </small>
           ))}
         </div>
       </div>

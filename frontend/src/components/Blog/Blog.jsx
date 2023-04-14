@@ -22,8 +22,10 @@ export default function Blog({ blog }) {
 
   return (
     <article className="blog">
-      {blog.categories.map(category => (
-        <span className="colored">{category}</span>
+      {blog.categories.map((category, index) => (
+        <span key={index} className="colored">
+          {category}
+        </span>
       ))}
       <h1 className="blog-title">{blog.title}</h1>
 
